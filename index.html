@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GTM Teaching Demo</title>
+</head>
+<body>
+  <h1>เว็บไซต์ทดลอง GTM</h1>
+  <p>เว็บไซต์นี้ใช้สำหรับฝึก Google Tag Manager</p>
+
+  <button id="demoButton">ทดสอบส่ง Event</button>
+  <p id="status">ยังไม่ได้ส่ง Event</p>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    document.getElementById('demoButton').addEventListener('click', function() {
+      window.dataLayer.push({
+        event: 'demo_event'
+      });
+
+      document.getElementById('status').textContent =
+        'ส่ง demo_event แล้ว';
+    });
+  </script>
+</body>
+</html>
